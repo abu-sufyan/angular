@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCRgx3RX9VjHKiYjqPvlbJSmQdEP7EIbg0",
-    authDomain: "tailobill-e62e4.firebaseapp.com",
-    databaseURL: "https://tailobill-e62e4.firebaseio.com",
-    projectId: "tailobill-e62e4",
-    storageBucket: "tailobill-e62e4.appspot.com",
-    messagingSenderId: "127487011171"
+    apiKey: 'AIzaSyA_AT4Yelb7ChfPVRUw4FmYR-2I5cX9JJQ',
+    authDomain: 'tailobill2.firebaseapp.com',
+    databaseURL: 'https://tailobill2.firebaseio.com',
+    projectId: 'tailobill2',
+    storageBucket: 'tailobill2.appspot.com',
+    messagingSenderId: '593571630738'
   }
 };
 

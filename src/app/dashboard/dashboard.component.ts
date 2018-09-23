@@ -12,7 +12,11 @@ export class DashboardComponent implements OnInit {
 
   employees: any;
   ngOnInit() {
-    this.employees = this.db.list('/employees').valueChanges();
+    this.db.list('/employees').snapshotChanges().subscribe(
+      data => {
+        this.employees = data;
+     }
+    );
   }
 
 }
