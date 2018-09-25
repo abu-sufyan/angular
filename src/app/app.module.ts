@@ -7,9 +7,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import {environment} from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import { CoreModule } from './core/core.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './store/effects/app.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +27,10 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase, 'tailobill'),
         AngularFireDatabaseModule,
-        MDBBootstrapModule.forRoot()
+        MDBBootstrapModule.forRoot(),
+        StoreModule.forRoot(reducers, { metaReducers }),
+        !environment.production ? StoreDevtoolsModule.instrument() : [],
+        EffectsModule.forRoot([AppEffects])
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

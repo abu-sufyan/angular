@@ -27,11 +27,11 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/angular-bootstrap-md/scss/mdb-free.scss",
               "src/styles.scss"
-          ],
-          "scripts": [
-            "node_modules/chart.js/dist/Chart.js",
-            "node_modules/hammerjs/hammer.min.js"
-          ]
+            ],
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/hammerjs/hammer.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -134,5 +134,8 @@
     "@schematics/angular:component": {
       "styleext": "scss"
     }
+  },
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
   }
 }
